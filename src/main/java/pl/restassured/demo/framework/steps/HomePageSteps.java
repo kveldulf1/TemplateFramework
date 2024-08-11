@@ -1,6 +1,7 @@
 package pl.restassured.demo.framework.steps;
 
 import io.cucumber.java.After;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,6 +35,8 @@ public class HomePageSteps {
                 driver.quit();
             }
         }));
+
+
     }
 
     @Given("I am on the home page")
@@ -51,5 +54,10 @@ public class HomePageSteps {
         if (driver != null) {
             driver.quit();
         }
+    }
+
+    @And("I accept the cookies")
+    public void iAcceptTheCookies() throws InterruptedException {
+        homePage.acceptCookies();
     }
 }
