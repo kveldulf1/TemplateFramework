@@ -8,14 +8,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 public class HomePageMenuBar extends BasePage {
-
-
     public HomePageMenuBar(WebDriver driver) {
         super(driver);
     }
 
     @FindBy(css = "li[class*=\"menu-dropdown\"]>button")
     private List<WebElement> menuButtonsList;
+
+    @FindBy(css = "a[data-ga-ea*=\"/Bez abonamentu/Smartfony\"]")
+    private WebElement smartphonesButton;
 
     public HomePageMenuBar moveMouseToDevicesButton() {
         Actions actions = new Actions(driver);
@@ -26,5 +27,9 @@ public class HomePageMenuBar extends BasePage {
     public HomePageMenuBar clickDevicesButton() throws InterruptedException {
         menuButtonsList.get(0).click();
         return this;
+    }
+
+    public void clickSmartphonesButton() {
+        smartphonesButton.click();
     }
 }

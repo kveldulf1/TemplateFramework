@@ -8,8 +8,6 @@ import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.Drivers.WebDriverManager;
 import pl.restassured.demo.framework.pages.HomePage;
 
-
-
 public class HomePageSteps {
     private WebDriver driver;
     private HomePage homePage;
