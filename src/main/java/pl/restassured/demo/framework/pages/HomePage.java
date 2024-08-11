@@ -10,6 +10,7 @@ import java.time.Duration;
 
 public class HomePage extends BasePage {
 
+
     @FindBy(id = "didomi-notice-agree-button")
     private WebElement acceptCookiesButton;
 
@@ -23,8 +24,7 @@ public class HomePage extends BasePage {
     }
 
     public HomePageMenuBar acceptCookies() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        WebElement element = wait.until(ExpectedConditions.visibilityOf(acceptCookiesButton));
+        wait.until(ExpectedConditions.visibilityOf(acceptCookiesButton));
         acceptCookiesButton.click();
         return new HomePageMenuBar(driver);
     }

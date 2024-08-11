@@ -5,6 +5,8 @@ Feature: Home Page
     And I accept the cookies
     When I move mouse over the Devices button from the home page menu bar
     When I click on Smartphones button from the home page menu bar
+    When I select the first product from the list
+
 
 #    When I click on the Devices button from the home page menu bar
     Then I should see the welcome message "Hello and welcome!"
