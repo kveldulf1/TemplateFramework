@@ -16,6 +16,12 @@ public class HomePageMenuBarSteps {
 
     @When("I click on the Devices button from the home page menu bar")
     public void iClickOnTheDevicesButtonFromTheHomePageMenuBar() throws InterruptedException {
+
         homePageMenuBar.clickDevicesButton();
+    }
+
+    @When("I move mouse over the Devices button from the home page menu bar")
+    public void iMoveMouseOverTheDevicesButtonFromTheHomePageMenuBar() {
+        homePageMenuBar.moveMouseToDevicesButton();
     }
 }
