@@ -4,17 +4,33 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import pl.restassured.demo.framework.pages.HomePage;
 
 import static org.junit.Assert.assertEquals;
 
 public class HomePageSteps {
-    private WebDriver driver = new ChromeDriver();
-    private HomePage homePage = new HomePage(driver);
+    private WebDriver driver;
+    private HomePage homePage;
+
+    public HomePageSteps() {
+        // Set the path to the chromedriver executable
+        String projectPath = System.getProperty("user.dir");
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
+
+        // Create ChromeOptions instance and add arguments
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized", "--disable-search-engine-choice-screen");
+
+        // Initialize ChromeDriver with options
+        this.driver = new ChromeDriver(options);
+        this.homePage = new HomePage(driver);
+
+           }
 
     @When("I open the home page")
     public void iOpenTheHomePage() {
-        driver.get("http://example.com");
+        driver.get("http://google.com");
     }
 
     @Then("I should see the welcome message {string}")
