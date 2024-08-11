@@ -3,4 +3,5 @@ Feature: Home Page
   Scenario: Verify welcome message
     Given I am on the home page
     And I accept the cookies
-#    Then I should see the welcome message "Hello and welcome!"
+    When I click on the Devices button from the home page menu bar
+    Then I should see the welcome message "Hello and welcome!"
