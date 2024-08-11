@@ -1,5 +1,6 @@
 package pl.restassured.demo.framework.steps;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +27,13 @@ public class HomePageSteps {
         this.driver = new ChromeDriver(options);
         this.homePage = new HomePage(driver);
 
-           }
+        // Add shutdown hook to quit the driver when the JVM shuts down
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            if (driver != null) {
+                driver.quit();
+            }
+        }));
+    }
 
     @When("I open the home page")
     public void iOpenTheHomePage() {
@@ -36,6 +43,12 @@ public class HomePageSteps {
     @Then("I should see the welcome message {string}")
     public void iShouldSeeTheWelcomeMessage(String expectedMessage) {
         assertEquals(expectedMessage, homePage.getWelcomeMessage());
-        driver.quit();
+    }
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
