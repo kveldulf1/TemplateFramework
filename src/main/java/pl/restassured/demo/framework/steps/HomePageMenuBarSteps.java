@@ -1,5 +1,6 @@
 package pl.restassured.demo.framework.steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.Drivers.WebDriverManager;
@@ -15,7 +16,7 @@ public class HomePageMenuBarSteps {
     }
 
     @When("I click on the Devices button from the home page menu bar")
-    public void iClickOnTheDevicesButtonFromTheHomePageMenuBar() throws InterruptedException {
+    public void iClickOnTheDevicesButtonFromTheHomePageMenuBar() {
         homePageMenuBar.clickDevicesButton();
     }
 
@@ -24,7 +25,7 @@ public class HomePageMenuBarSteps {
         homePageMenuBar.moveMouseToDevicesButton();
     }
 
-    @When("I click on Smartphones button from the home page menu bar")
+    @And("I click on Smartphones button from the home page menu bar")
     public void iClickOnSmartphonesButtonFromTheHomePageMenuBar() {
         homePageMenuBar.clickSmartphonesButton();
     }

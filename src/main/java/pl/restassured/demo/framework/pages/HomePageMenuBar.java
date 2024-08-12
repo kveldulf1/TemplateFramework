@@ -24,7 +24,7 @@ public class HomePageMenuBar extends BasePage {
         return this;
     }
 
-    public HomePageMenuBar clickDevicesButton() throws InterruptedException {
+    public HomePageMenuBar clickDevicesButton() {
         menuButtonsList.get(0).click();
         return this;
     }
