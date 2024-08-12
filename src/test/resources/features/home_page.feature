@@ -13,6 +13,7 @@ Feature: Home Page
     When I note the start price value
     And  I note the monthly price value
     When I click on the Add to cart button
+    Then I verify if I am redirected to the cart page
 
 
 
