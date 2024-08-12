@@ -1,11 +1,11 @@
 package pl.restassured.demo.framework.steps;
 
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.Drivers.WebDriverManager;
 import pl.restassured.demo.framework.pages.CartPage;
 
+import static org.junit.Assert.assertTrue;
 
 public class CartPageSteps {
     private WebDriver driver;
@@ -16,8 +16,8 @@ public class CartPageSteps {
         this.cartPage = new CartPage(driver);
     }
 
-    @Then("I verify if I am redirected to the cart page")
-    public void iVerifyIfIAmRedirectedToTheCartPage() {
-        cartPage.isCartPageDisplayed();
+    @Then("I verify if I am redirected to the basket page")
+    public void iVerifyIfIAmRedirectedToTheBasketPage() {
+        assertTrue("Proceed to checkout button is not displayed", cartPage.isCartPageDisplayed());
     }
 }
