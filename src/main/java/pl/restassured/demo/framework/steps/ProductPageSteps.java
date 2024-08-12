@@ -1,5 +1,6 @@
 package pl.restassured.demo.framework.steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.Drivers.WebDriverManager;
@@ -22,5 +23,10 @@ public class ProductPageSteps {
     @When("I note the start price value")
     public void iNoteTheStartPriceValue() {
         productPage.getTotalUpfrontPrice();
+    }
+
+    @And("I note the monthly price value")
+    public void iNoteTheMonthlyPriceValue() {
+        productPage.getMonthlyPrice();
     }
 }

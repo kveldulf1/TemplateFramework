@@ -11,6 +11,7 @@ Feature: Home Page
     When I select the first product from the list
     Then I verify if url contains "urzadzenie" text
     When I note the start price value
+    And  I note the monthly price value
     When I click on the Add to cart button
 
 

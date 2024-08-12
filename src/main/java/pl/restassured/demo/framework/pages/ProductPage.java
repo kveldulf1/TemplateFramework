@@ -21,6 +21,10 @@ public class ProductPage extends BasePage {
     @FindBy(css = "div[data-qa='PRD_TotalUpfront']>div>div")
     private List<WebElement> upfrontPriceList;
 
+    @FindBy(xpath = "//body/div[@id='app']/div[@id='osAppInnerContainer']/main[1]/section[1]/section[1]/div[1]/span[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]")
+    private WebElement monthlyPrice;
+
+
     public ProductPage(WebDriver driver) {
         super(driver);
     }
@@ -33,5 +37,10 @@ public class ProductPage extends BasePage {
     public String getTotalUpfrontPrice() {
         wait.until(driver -> upfrontPriceList.size() == 2);
         return upfrontPriceList.get(1).getText();
+    }
+
+    public String getMonthlyPrice() {
+        wait.until(ExpectedConditions.visibilityOf(monthlyPrice));
+        return monthlyPrice.getText();
     }
 }
