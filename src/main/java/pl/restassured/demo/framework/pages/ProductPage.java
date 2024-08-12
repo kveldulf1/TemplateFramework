@@ -37,8 +37,9 @@ public class ProductPage extends BasePage {
     public String getTotalUpfrontPrice() {
         wait.until(driver -> upfrontPriceList.size() == 2);
         return upfrontPriceList.get(1).getText();
+//        wait.until(ExpectedConditions.visibilityOf(upfrontPrice));
+//        return upfrontPrice.getText();
     }
-
     public String getMonthlyPrice() {
         wait.until(ExpectedConditions.visibilityOf(monthlyPrice));
         return monthlyPrice.getText();
