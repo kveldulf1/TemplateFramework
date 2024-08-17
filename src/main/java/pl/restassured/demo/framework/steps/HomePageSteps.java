@@ -4,6 +4,8 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.Drivers.WebDriverManager;
 import pl.restassured.demo.framework.pages.HomePage;
@@ -12,6 +14,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 public class HomePageSteps {
+    private static final Logger log = LogManager.getLogger(HomePageSteps.class);
     private WebDriver driver;
     private HomePage homePage;
 
@@ -23,6 +26,8 @@ public class HomePageSteps {
     @Given("I am on the home page")
     public void iOpenTheHomePage() {
         homePage.navigateToHomePage();
+        log.info("Navigated to the T-Mobile homepage");
+        log.error("Navigation failed");
     }
 
     @Then("I should see the welcome message {string}")

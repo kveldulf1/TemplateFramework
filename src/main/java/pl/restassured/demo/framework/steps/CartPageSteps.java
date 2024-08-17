@@ -2,6 +2,8 @@ package pl.restassured.demo.framework.steps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.Drivers.WebDriverManager;
 import pl.restassured.demo.framework.pages.CartPage;
@@ -10,6 +12,7 @@ import pl.restassured.demo.framework.pages.ProductPage;
 import static org.junit.Assert.assertTrue;
 
 public class CartPageSteps {
+    private static final Logger log = LogManager.getLogger(CartPageSteps.class);
     private WebDriver driver;
     private CartPage cartPage;
 
@@ -28,6 +31,7 @@ public class CartPageSteps {
         String cartPageUpfrontPrice = cartPage.getUpfrontPrice();
         String productPageUpfrontPrice = new ProductPage(driver).getTotalUpfrontPrice();
         assertTrue("Upfront price is not the same", cartPageUpfrontPrice.equals(productPageUpfrontPrice));
+        log.error("Upfront price is not the same");
 //        cartPage.getMonthlyPrice();
     }
 }
