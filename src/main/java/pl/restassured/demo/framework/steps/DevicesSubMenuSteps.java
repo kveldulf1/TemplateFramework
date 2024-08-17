@@ -3,7 +3,7 @@ package pl.restassured.demo.framework.steps;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.Drivers.WebDriverManager;
-import pl.restassured.demo.framework.pages.DevicesSubMenu;
+import pl.restassured.demo.framework.Pages.DevicesSubMenu;
 
 import static org.junit.Assert.assertTrue;
 

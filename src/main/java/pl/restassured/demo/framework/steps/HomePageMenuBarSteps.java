@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.Drivers.WebDriverManager;
-import pl.restassured.demo.framework.pages.HomePageMenuBar;
+import pl.restassured.demo.framework.Pages.HomePageMenuBar;
 
 public class HomePageMenuBarSteps {
     private WebDriver driver;

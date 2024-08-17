@@ -6,8 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.Drivers.WebDriverManager;
-import pl.restassured.demo.framework.pages.CartPage;
-import pl.restassured.demo.framework.pages.ProductPage;
+import pl.restassured.demo.framework.Pages.CartPage;
+import pl.restassured.demo.framework.Pages.ProductPage;
 
 import static org.junit.Assert.assertTrue;
 

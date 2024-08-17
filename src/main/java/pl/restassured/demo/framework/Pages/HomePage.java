@@ -1,4 +1,4 @@
-package pl.restassured.demo.framework.pages;
+package pl.restassured.demo.framework.Pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,7 +18,7 @@ public class HomePage extends BasePage {
     }
 
     public HomePage navigateToHomePage() {
-        driver.get("http://t-mobile123.pl");
+        driver.get("http://t-mobile.pl");
         log.info("Navigated to the T-Mobile homepage");
         log.error("Navigation failed");
         return this;

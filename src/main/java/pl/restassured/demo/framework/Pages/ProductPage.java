@@ -1,14 +1,11 @@
-package pl.restassured.demo.framework.pages;
+package pl.restassured.demo.framework.Pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class ProductPage extends BasePage {
 

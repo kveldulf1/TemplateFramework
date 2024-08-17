@@ -1,4 +1,4 @@
-package pl.restassured.demo.framework.pages;
+package pl.restassured.demo.framework.Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
