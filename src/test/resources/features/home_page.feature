@@ -15,10 +15,3 @@ Feature: Home Page
     When I click on the Add to cart button
     Then I verify if I am redirected to the basket page
     And I verify if the start price value is the same as the one noted
-
-
-
-
-
-#    When I click on the Devices button from the home page menu bar
-    Then I should see the welcome message "Hello and welcome!"

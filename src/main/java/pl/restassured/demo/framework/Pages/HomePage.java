@@ -3,6 +3,7 @@ package pl.restassured.demo.framework.Pages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,9 +19,11 @@ public class HomePage extends BasePage {
     }
 
     public HomePage navigateToHomePage() {
-        driver.get("http://t-mobile.pl");
-        log.info("Navigated to the T-Mobile homepage");
-        log.error("Navigation failed");
+        try {
+            driver.get("http://t-mobile123.pl");
+        } catch (WebDriverException e) {
+            log.error("NAVIGATION FAILED");
+        }
         return this;
     }
 
