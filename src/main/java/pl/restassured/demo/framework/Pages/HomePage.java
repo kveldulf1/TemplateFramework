@@ -12,7 +12,7 @@ public class HomePage extends BasePage {
 
     private static final Logger log = LogManager.getLogger(HomePage.class);
 
-    @FindBy(id = "123")
+    @FindBy(id = "didomi-notice-agree-button")
     private WebElement acceptCookiesButton;
 
     public HomePage(WebDriver driver) {
