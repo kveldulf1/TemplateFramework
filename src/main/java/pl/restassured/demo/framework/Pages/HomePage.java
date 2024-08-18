@@ -1,7 +1,5 @@
 package pl.restassured.demo.framework.Pages;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -9,8 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends BasePage {
-
-    private static final Logger log = LogManager.getLogger(HomePage.class);
 
     @FindBy(id = "didomi-notice-agree-button")
     private WebElement acceptCookiesButton;
@@ -38,6 +34,7 @@ public class HomePage extends BasePage {
         try {
             wait.until(ExpectedConditions.visibilityOf(acceptCookiesButton));
             acceptCookiesButton.click();
+            isSuccessful = true;
         } catch (WebDriverException e) {
             log.error("Accepting cookies failed.");
         }
