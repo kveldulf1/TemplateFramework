@@ -1,5 +1,7 @@
 package pl.restassured.demo.framework.Pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,24 +14,56 @@ public class HomePageMenuBar extends BasePage {
         super(driver);
     }
 
-    @FindBy(css = "li[class*=\"menu-dropdown\"]>button")
+    private Logger log = LogManager.getLogger(HomePageMenuBar.class);
+
+    @FindBy(css = "li[class*='menu-dropdown']>button")
     private List<WebElement> menuButtonsList;
 
-    @FindBy(css = "a[data-ga-ea*=\"/Bez abonamentu/Smartfony\"]")
+    @FindBy(css = "a[data-ga-ea*='/Bez abonamentu/Smartfony']")
     private WebElement smartphonesButton;
 
     public HomePageMenuBar moveMouseToDevicesButton() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(menuButtonsList.get(0)).perform();
+        boolean isSuccessful = false;
+        try {
+            wait.until(webDriver -> menuButtonsList.get(0).isDisplayed());
+            Actions actions = new Actions(driver);
+            actions.moveToElement(menuButtonsList.get(0)).perform();
+            isSuccessful = true;
+        } catch (Exception e) {
+            log.error("Devices button not found.");
+        }
+        if (isSuccessful) {
+            log.info("Devices button found and moved the mouse pointer over it.");
+        }
         return this;
     }
 
     public HomePageMenuBar clickDevicesButton() {
-        menuButtonsList.get(0).click();
+        boolean isSuccessful = false;
+        try {
+            wait.until(webDriver -> menuButtonsList.get(0).isDisplayed());
+            menuButtonsList.get(0).click();
+            isSuccessful = true;
+        } catch (Exception e) {
+            log.error("Devices button not found.");
+        }
+        if (isSuccessful) {
+            log.info("Devices button clicked.");
+        }
         return this;
     }
 
     public void clickSmartphonesButton() {
-        smartphonesButton.click();
+        boolean isSuccessful = false;
+        try {
+            wait.until(webDriver -> smartphonesButton.isDisplayed());
+            smartphonesButton.click();
+            isSuccessful = true;
+        } catch (Exception e) {
+            log.error("Smartphones button not found.");
+        }
+        if (isSuccessful) {
+            log.info("Smartphones button clicked.");
+        }
     }
 }

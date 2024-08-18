@@ -17,7 +17,7 @@ public class ProductPageSteps {
 
     @When("I click on the Add to cart button")
     public void iClickOnTheAddToCartButton() {
-        productPage.clickAddToCartButtonUsingJS();
+        productPage.clickAddToCartButton();
     }
 
     @When("I note the start price value")

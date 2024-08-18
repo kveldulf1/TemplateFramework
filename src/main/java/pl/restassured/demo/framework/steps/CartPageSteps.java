@@ -31,7 +31,5 @@ public class CartPageSteps {
         String cartPageUpfrontPrice = cartPage.getUpfrontPrice();
         String productPageUpfrontPrice = new ProductPage(driver).getTotalUpfrontPrice();
         assertTrue("Upfront price is not the same", cartPageUpfrontPrice.equals(productPageUpfrontPrice));
-        log.error("Upfront price is not the same");
-//        cartPage.getMonthlyPrice();
     }
 }

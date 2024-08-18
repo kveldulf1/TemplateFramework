@@ -11,7 +11,7 @@ import java.time.Duration;
 public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected Logger log = LogManager.getLogger(BasePage.class);
+    private Logger log = LogManager.getLogger(BasePage.class);
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -20,5 +20,4 @@ public class BasePage {
         log.debug("Initializing WebDriverWait");
         PageFactory.initElements(driver, this);
     }
-
 }

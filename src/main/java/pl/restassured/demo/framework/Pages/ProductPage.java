@@ -1,5 +1,7 @@
 package pl.restassured.demo.framework.Pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,24 +23,53 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = "//body/div[@id='app']/div[@id='osAppInnerContainer']/main[1]/section[1]/section[1]/div[1]/span[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]")
     private WebElement monthlyPrice;
 
+    private Logger log = LogManager.getLogger(ProductPage.class);
 
     public ProductPage(WebDriver driver) {
         super(driver);
     }
 
-    public void clickAddToCartButtonUsingJS() {
-        wait.until(ExpectedConditions.elementToBeClickable(addToCartButtonList.get(1)));
-        addToCartButtonList.get(1).click();
+    public void clickAddToCartButton() {
+        boolean isSuccessful = false;
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(addToCartButtonList.get(1)));
+            addToCartButtonList.get(1).click();
+            isSuccessful = true;
+        } catch (Exception e) {
+            log.error("Add to cart button not found.");
+        }
+        if (isSuccessful) {
+            log.info("Add to cart button clicked.");
+        }
     }
 
     public String getTotalUpfrontPrice() {
-        wait.until(driver -> upfrontPriceList.size() == 2);
+        boolean isSuccessful = false;
+        try {
+            wait.until(driver -> upfrontPriceList.size() == 2);
+            upfrontPriceList.get(1).getText();
+            isSuccessful = true;
+        } catch (Exception e) {
+            log.error("Upfront price value not fetched.");
+        }
+        if (isSuccessful) {
+            log.info("Upfront price fetched.");
+        }
         return upfrontPriceList.get(1).getText();
-//        wait.until(ExpectedConditions.visibilityOf(upfrontPrice));
-//        return upfrontPrice.getText();
     }
+
     public String getMonthlyPrice() {
-        wait.until(ExpectedConditions.visibilityOf(monthlyPrice));
+        boolean isSuccessful = false;
+        try {
+            wait.until(ExpectedConditions.visibilityOf(monthlyPrice));
+            monthlyPrice.getText();
+            isSuccessful = true;
+        } catch (Exception e) {
+            log.error("Monthly price value not fetched.");
+        }
+        if (isSuccessful) {
+            log.info("Monthly price fetched.");
+        }
         return monthlyPrice.getText();
     }
 }

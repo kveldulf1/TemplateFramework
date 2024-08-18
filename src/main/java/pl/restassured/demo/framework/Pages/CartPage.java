@@ -1,5 +1,7 @@
 package pl.restassured.demo.framework.Pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,23 +18,51 @@ public class CartPage extends BasePage {
     @FindBy(css = "span[data-qa='BKT_TotalMonthly']")
     private WebElement monthlyPrice;
 
+    private Logger log = LogManager.getLogger(CartPage.class);
 
     public CartPage(WebDriver driver) {
         super(driver);
     }
 
     public boolean isCartPageDisplayed() {
-        wait.until(ExpectedConditions.visibilityOf(cartHeader));
+        boolean isSuccessful = false;
+        try {
+            wait.until(ExpectedConditions.visibilityOf(cartHeader));
+            isSuccessful = true;
+        } catch (Exception e) {
+            log.error("Cart page is not displayed.");
+        }
+        if (isSuccessful) {
+            log.info("Cart page is displayed.");
+        }
         return cartHeader.isDisplayed();
     }
 
     public String getUpfrontPrice() {
-    wait.until(ExpectedConditions.visibilityOf(upfrontPrice));
+    boolean isSuccessful = false;
+    try {
+        wait.until(ExpectedConditions.visibilityOf(upfrontPrice));
+        isSuccessful = true;
+    } catch (Exception e) {
+        log.error("Upfront price value not fetched.");
+    }
+    if (isSuccessful) {
+        log.info("Upfront price fetched.");
+    }
     return upfrontPrice.getText();
     }
 
     public String getMonthlyPrice() {
-    wait.until(ExpectedConditions.visibilityOf(monthlyPrice));
+        boolean isSuccessful = false;
+        try {
+            wait.until(ExpectedConditions.visibilityOf(monthlyPrice));
+            isSuccessful = true;
+        } catch (Exception e) {
+            log.error("Monthly price value not fetched.");
+        }
+        if (isSuccessful) {
+            log.info("Monthly price fetched.");
+        }
     return monthlyPrice.getText();
     }
 }
