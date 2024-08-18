@@ -11,7 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class HomePage extends BasePage {
 
     private static final Logger log = LogManager.getLogger(HomePage.class);
-    @FindBy(id = "didomi-notice-agree-button")
+
+    @FindBy(id = "123")
     private WebElement acceptCookiesButton;
 
     public HomePage(WebDriver driver) {
@@ -19,17 +20,30 @@ public class HomePage extends BasePage {
     }
 
     public HomePage navigateToHomePage() {
+        boolean isSuccessful = false;
         try {
-            driver.get("http://t-mobile123.pl");
+            driver.get("http://t-mobile.pl");
+            isSuccessful = true;
         } catch (WebDriverException e) {
-            log.error("NAVIGATION FAILED");
+            log.error("Navigation to home page failed.");
+        }
+        if (isSuccessful) {
+            log.info("Opened the home page.");
         }
         return this;
     }
 
     public HomePageMenuBar acceptCookies() {
-        wait.until(ExpectedConditions.visibilityOf(acceptCookiesButton));
-        acceptCookiesButton.click();
+        boolean isSuccessful = false;
+        try {
+            wait.until(ExpectedConditions.visibilityOf(acceptCookiesButton));
+            acceptCookiesButton.click();
+        } catch (WebDriverException e) {
+            log.error("Accepting cookies failed.");
+        }
+        if (isSuccessful) {
+            log.info("Accepted cookies.");
+        }
         return new HomePageMenuBar(driver);
     }
 }
