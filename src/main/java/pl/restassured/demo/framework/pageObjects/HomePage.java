@@ -1,7 +1,5 @@
 package pl.restassured.demo.framework.pageObjects;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -12,8 +10,6 @@ public class HomePage extends BasePage {
 
     @FindBy(id = "didomi-notice-agree-button")
     private WebElement acceptCookiesButton;
-
-    private Logger log = LogManager.getLogger(HomePage.class);
 
     public HomePage(WebDriver driver) {
         super(driver);

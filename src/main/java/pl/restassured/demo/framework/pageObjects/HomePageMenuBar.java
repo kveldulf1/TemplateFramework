@@ -1,7 +1,5 @@
 package pl.restassured.demo.framework.pageObjects;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -13,8 +11,6 @@ public class HomePageMenuBar extends BasePage {
     public HomePageMenuBar(WebDriver driver) {
         super(driver);
     }
-
-    private Logger log = LogManager.getLogger(HomePageMenuBar.class);
 
     @FindBy(css = "li[class*='menu-dropdown']>button")
     private List<WebElement> menuButtonsList;

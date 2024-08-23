@@ -1,7 +1,5 @@
 package pl.restassured.demo.framework.pageObjects;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,8 +8,6 @@ public class DevicesSubMenu extends BasePage {
 
     @FindBy(css = "div[class*='menu-dropdown-submenu']")
     private WebElement subMenuDropdown;
-
-    private Logger log = LogManager.getLogger(DevicesSubMenu.class);
 
     public DevicesSubMenu(WebDriver driver) {
         super(driver);

@@ -45,7 +45,7 @@ public class CartPage extends BasePage {
         log.error("Upfront price value not fetched.");
     }
     if (isSuccessful) {
-        log.info("Upfront price fetched.");
+        log.info("Upfront price fetched: " + upfrontPrice.getText());
     }
     return upfrontPrice.getText().concat(" zł");
     }

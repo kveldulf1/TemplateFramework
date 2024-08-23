@@ -1,7 +1,5 @@
 package pl.restassured.demo.framework.pageObjects;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,7 +22,6 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = "//body/div[@id='app']/div[@id='osAppInnerContainer']/main[1]/section[1]/section[1]/div[1]/span[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]")
     private WebElement monthlyPrice;
 
-    private Logger log = LogManager.getLogger(ProductPage.class);
     private Context context;
 
     public ProductPage(WebDriver driver) {
