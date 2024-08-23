@@ -1,4 +1,4 @@
-package pl.restassured.demo.framework.Pages;
+package pl.restassured.demo.framework.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

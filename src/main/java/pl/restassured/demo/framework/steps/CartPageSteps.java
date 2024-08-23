@@ -3,8 +3,8 @@ package pl.restassured.demo.framework.steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
-import pl.restassured.demo.framework.Drivers.WebDriverManager;
-import pl.restassured.demo.framework.Pages.CartPage;
+import pl.restassured.demo.framework.drivers.WebDriverManager;
+import pl.restassured.demo.framework.pages.CartPage;
 import pl.restassured.demo.framework.di.Context;
 
 import static org.junit.Assert.assertEquals;
@@ -32,5 +32,12 @@ public class CartPageSteps {
         assertTrue("Upfront prices are not equals. Upfront price on cart page is " + cartPage.getUpfrontPrice() +
                 " and upfront price on product page is " + context.getContext("upfrontPriceProductPage"),
                 cartPage.getUpfrontPrice().equals(context.getContext("upfrontPriceProductPage")));
+    }
+
+    @And("I verify if the total price value is the same as the one noted")
+    public void iVerifyIfTheTotalPriceValueIsTheSameAsTheOneNoted() {
+        assertTrue("Monthly prices are not equals. Monthly price on cart page is " + cartPage.getMonthlyPrice() +
+                " and monthly price on product page is " + context.getContext("monthlyPriceProductPage"),
+                cartPage.getMonthlyPrice().equals(context.getContext("monthlyPriceProductPage")));
     }
 }

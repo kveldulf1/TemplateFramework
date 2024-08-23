@@ -7,8 +7,8 @@ import io.cucumber.java.en.Then;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import pl.restassured.demo.framework.Drivers.WebDriverManager;
-import pl.restassured.demo.framework.Pages.HomePage;
+import pl.restassured.demo.framework.drivers.WebDriverManager;
+import pl.restassured.demo.framework.pages.HomePage;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;

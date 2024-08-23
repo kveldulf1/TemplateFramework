@@ -1,4 +1,4 @@
-package pl.restassured.demo.framework.Pages;
+package pl.restassured.demo.framework.pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -64,6 +64,6 @@ public class CartPage extends BasePage {
         if (isSuccessful) {
             log.info("Monthly price fetched.");
         }
-    return monthlyPrice.getText();
+    return monthlyPrice.getText().concat(" zł");
     }
 }

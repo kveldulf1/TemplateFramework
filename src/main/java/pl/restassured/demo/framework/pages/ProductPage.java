@@ -1,4 +1,4 @@
-package pl.restassured.demo.framework.Pages;
+package pl.restassured.demo.framework.pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import pl.restassured.demo.framework.di.Context;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class ProductPage extends BasePage {
     private WebElement monthlyPrice;
 
     private Logger log = LogManager.getLogger(ProductPage.class);
+    private Context context;
 
     public ProductPage(WebDriver driver) {
         super(driver);
@@ -53,7 +55,7 @@ public class ProductPage extends BasePage {
             log.error("Upfront price value not fetched.");
         }
         if (isSuccessful) {
-            log.info("Upfront price fetched.");
+            log.info("Upfront price fetched = " + upfrontPriceList.get(1).getText());
         }
         return upfrontPriceList.get(1).getText();
     }
@@ -68,7 +70,7 @@ public class ProductPage extends BasePage {
             log.error("Monthly price value not fetched.");
         }
         if (isSuccessful) {
-            log.info("Monthly price fetched.");
+            log.info("Monthly price fetched = " + monthlyPrice.getText());
         }
         return monthlyPrice.getText();
     }

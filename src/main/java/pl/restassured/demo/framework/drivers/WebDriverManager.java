@@ -1,4 +1,4 @@
-package pl.restassured.demo.framework.Drivers;
+package pl.restassured.demo.framework.drivers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

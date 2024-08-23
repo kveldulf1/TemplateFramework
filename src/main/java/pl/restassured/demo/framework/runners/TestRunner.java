@@ -1,4 +1,4 @@
-package pl.restassured.demo.framework.Runners;
+package pl.restassured.demo.framework.runners;
 
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;

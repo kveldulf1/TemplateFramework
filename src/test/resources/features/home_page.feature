@@ -1,7 +1,7 @@
-Feature: Home Page
+Feature: End to end test for adding a product to the cart
 
   @dependencyInjection
-  Scenario: Verify welcome message
+  Scenario: Add to cart, verify prices, navigate to home page and verify whether cart icon displays that there is a product in the cart
     Given I am on the home page
     And I accept the cookies
     Then I verify if browser is opened
@@ -16,3 +16,4 @@ Feature: Home Page
     When I click on the Add to cart button
     Then I verify if I am redirected to the basket page
     And I verify if the start price value is the same as the one noted
+    And I verify if the total price value is the same as the one noted

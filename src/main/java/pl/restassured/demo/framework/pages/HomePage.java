@@ -1,4 +1,4 @@
-package pl.restassured.demo.framework.Pages;
+package pl.restassured.demo.framework.pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

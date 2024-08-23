@@ -3,8 +3,8 @@ package pl.restassured.demo.framework.steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import pl.restassured.demo.framework.Drivers.WebDriverManager;
-import pl.restassured.demo.framework.Pages.ProductPage;
+import pl.restassured.demo.framework.drivers.WebDriverManager;
+import pl.restassured.demo.framework.pages.ProductPage;
 import pl.restassured.demo.framework.di.Context;
 
 public class ProductPageSteps {
@@ -30,7 +30,7 @@ public class ProductPageSteps {
 
     @And("I note the monthly price value")
     public void iNoteTheMonthlyPriceValue() {
-        context.setContext("Price2", productPage.getMonthlyPrice());
+        context.setContext("monthlyPriceProductPage", productPage.getMonthlyPrice());
         productPage.getMonthlyPrice();
     }
 }
