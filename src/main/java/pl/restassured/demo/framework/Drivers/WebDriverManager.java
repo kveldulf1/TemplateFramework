@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class WebDriverManager {
     private static WebDriver driver;
 
-    private WebDriverManager() {
+    public WebDriverManager() {
         // private constructor to prevent instantiation (this is a singleton class)
     }
 

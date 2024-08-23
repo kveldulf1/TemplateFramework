@@ -5,14 +5,17 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.Drivers.WebDriverManager;
 import pl.restassured.demo.framework.Pages.ProductPage;
+import pl.restassured.demo.framework.di.Context;
 
 public class ProductPageSteps {
     private WebDriver driver;
     private ProductPage productPage;
+    private Context context;
 
-    public ProductPageSteps() {
+    public ProductPageSteps(Context context) {
         this.driver = WebDriverManager.getDriver();
         this.productPage = new ProductPage(driver);
+        this.context = context;
     }
 
     @When("I click on the Add to cart button")
@@ -22,11 +25,12 @@ public class ProductPageSteps {
 
     @When("I note the start price value")
     public void iNoteTheStartPriceValue() {
-        productPage.getTotalUpfrontPrice();
+        context.setContext("upfrontPriceProductPage", productPage.getTotalUpfrontPrice());
     }
 
     @And("I note the monthly price value")
     public void iNoteTheMonthlyPriceValue() {
+        context.setContext("Price2", productPage.getMonthlyPrice());
         productPage.getMonthlyPrice();
     }
 }

@@ -1,5 +1,6 @@
 Feature: Home Page
 
+  @dependencyInjection
   Scenario: Verify welcome message
     Given I am on the home page
     And I accept the cookies

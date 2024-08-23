@@ -2,23 +2,24 @@ package pl.restassured.demo.framework.steps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.Drivers.WebDriverManager;
 import pl.restassured.demo.framework.Pages.CartPage;
-import pl.restassured.demo.framework.Pages.ProductPage;
+import pl.restassured.demo.framework.di.Context;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class CartPageSteps {
-    private static final Logger log = LogManager.getLogger(CartPageSteps.class);
+
     private WebDriver driver;
     private CartPage cartPage;
+    private Context context;
 
-    public CartPageSteps() {
+    public CartPageSteps(Context context) {
         this.driver = WebDriverManager.getDriver();
         this.cartPage = new CartPage(driver);
+        this.context = context;
     }
 
     @Then("I verify if I am redirected to the basket page")
@@ -28,8 +29,8 @@ public class CartPageSteps {
 
     @And("I verify if the start price value is the same as the one noted")
     public void iVerifyIfTheStartPriceValueIsTheSameAsTheOneNoted() {
-        String cartPageUpfrontPrice = cartPage.getUpfrontPrice();
-        String productPageUpfrontPrice = new ProductPage(driver).getTotalUpfrontPrice();
-        assertTrue("Upfront price is not the same", cartPageUpfrontPrice.equals(productPageUpfrontPrice));
+        assertTrue("Upfront prices are not equals. Upfront price on cart page is " + cartPage.getUpfrontPrice() +
+                " and upfront price on product page is " + context.getContext("upfrontPriceProductPage"),
+                cartPage.getUpfrontPrice().equals(context.getContext("upfrontPriceProductPage")));
     }
 }

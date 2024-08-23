@@ -49,8 +49,9 @@ public class CartPage extends BasePage {
     if (isSuccessful) {
         log.info("Upfront price fetched.");
     }
-    return upfrontPrice.getText();
+    return upfrontPrice.getText().concat(" zł");
     }
+
 
     public String getMonthlyPrice() {
         boolean isSuccessful = false;
