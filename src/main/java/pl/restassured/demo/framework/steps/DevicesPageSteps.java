@@ -3,7 +3,7 @@ package pl.restassured.demo.framework.steps;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.drivers.WebDriverManager;
-import pl.restassured.demo.framework.pages.DevicesPage;
+import pl.restassured.demo.framework.pageObjects.DevicesPage;
 
 public class DevicesPageSteps {
     private WebDriver driver;

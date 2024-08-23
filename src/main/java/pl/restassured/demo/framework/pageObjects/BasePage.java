@@ -1,4 +1,4 @@
-package pl.restassured.demo.framework.pages;
+package pl.restassured.demo.framework.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -11,7 +11,7 @@ import java.time.Duration;
 public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    private Logger log = LogManager.getLogger(BasePage.class);
+    public Logger log = LogManager.getLogger(BasePage.class);
 
     public BasePage(WebDriver driver) {
         this.driver = driver;

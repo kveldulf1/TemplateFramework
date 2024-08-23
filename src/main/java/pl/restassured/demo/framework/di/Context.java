@@ -2,7 +2,7 @@ package pl.restassured.demo.framework.di;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import pl.restassured.demo.framework.pages.CartPage;
+import pl.restassured.demo.framework.pageObjects.CartPage;
 
 import java.util.HashMap;
 import java.util.Map;

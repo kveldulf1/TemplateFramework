@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.drivers.WebDriverManager;
-import pl.restassured.demo.framework.pages.ProductPage;
+import pl.restassured.demo.framework.pageObjects.ProductPage;
 import pl.restassured.demo.framework.di.Context;
 
 public class ProductPageSteps {

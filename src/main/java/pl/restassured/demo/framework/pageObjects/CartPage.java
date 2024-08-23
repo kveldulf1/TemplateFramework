@@ -1,4 +1,4 @@
-package pl.restassured.demo.framework.pages;
+package pl.restassured.demo.framework.pageObjects;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,8 +17,6 @@ public class CartPage extends BasePage {
 
     @FindBy(css = "span[data-qa='BKT_TotalMonthly']")
     private WebElement monthlyPrice;
-
-    private Logger log = LogManager.getLogger(CartPage.class);
 
     public CartPage(WebDriver driver) {
         super(driver);
