@@ -4,10 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import pl.restassured.demo.framework.testBase.TestBase;
 
 import java.util.List;
 
-public class HomePageMenuBar extends BasePage {
+public class HomePageMenuBar extends TestBase {
     public HomePageMenuBar(WebDriver driver) {
         super(driver);
     }

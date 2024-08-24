@@ -1,13 +1,12 @@
 package pl.restassured.demo.framework.pageObjects;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import pl.restassured.demo.framework.testBase.TestBase;
 
-public class CartPage extends BasePage {
+public class CartPage extends TestBase {
 
     @FindBy(css = "h1[class*='basketHeaderText']")
     private WebElement cartHeader;

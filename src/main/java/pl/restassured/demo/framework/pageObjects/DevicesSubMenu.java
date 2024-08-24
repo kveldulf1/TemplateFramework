@@ -3,8 +3,9 @@ package pl.restassured.demo.framework.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pl.restassured.demo.framework.testBase.TestBase;
 
-public class DevicesSubMenu extends BasePage {
+public class DevicesSubMenu extends TestBase {
 
     @FindBy(css = "div[class*='menu-dropdown-submenu']")
     private WebElement subMenuDropdown;

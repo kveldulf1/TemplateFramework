@@ -5,13 +5,14 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.drivers.WebDriverManager;
 import pl.restassured.demo.framework.pageObjects.HomePageMenuBar;
+import pl.restassured.demo.framework.testBase.TestBase;
 
-public class HomePageMenuBarSteps {
-    private WebDriver driver;
+public class HomePageMenuBarSteps extends TestBase {
+//    private WebDriver driver;
     private HomePageMenuBar homePageMenuBar;
 
     public HomePageMenuBarSteps() {
-        this.driver = WebDriverManager.getDriver();
+        super(WebDriverManager.getDriver());
         this.homePageMenuBar = new HomePageMenuBar(driver);
     }
 

@@ -4,8 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import pl.restassured.demo.framework.testBase.TestBase;
 
-public class DevicesPage extends BasePage {
+public class DevicesPage extends TestBase {
 
     @FindBy(css = "div[data-qa='LST_ProductCard0']")
     private WebElement firstProductButton;

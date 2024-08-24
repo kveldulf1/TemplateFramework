@@ -5,10 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pl.restassured.demo.framework.di.Context;
+import pl.restassured.demo.framework.testBase.TestBase;
 
 import java.util.List;
 
-public class ProductPage extends BasePage {
+public class ProductPage extends TestBase {
 
     @FindBy(css = "button[data-qa='PRD_AddToBasket']")
     private List<WebElement> addToCartButtonList;
