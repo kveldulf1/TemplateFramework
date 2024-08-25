@@ -45,7 +45,7 @@ public class ProductPage extends TestBase {
         }
     }
 
-    public String getTotalUpfrontPrice() throws InterruptedException {
+    public String getTotalUpfrontPrice(){
         boolean isSuccessful = false;
         try {
             wait.until(driver -> upfrontPriceList.size() == 2);

@@ -8,7 +8,7 @@ import pl.restassured.demo.framework.testBase.TestBase;
 
 public class DevicesPage extends TestBase {
 
-    @FindBy(css = "div[data-qa='LST_ProductCard0']")
+    @FindBy(css = "div[data-qa='LST_ProductCard5']")
     private WebElement firstProductButton;
 
     public DevicesPage(WebDriver driver) {

@@ -8,8 +8,15 @@ import pl.restassured.demo.framework.pageObjects.ProductPage;
 import pl.restassured.demo.framework.di.Context;
 
 public class ProductPageSteps {
-    ProductPage productPage = new ProductPage(WebDriverManager.getDriver());
-    Context context = new Context();
+    private WebDriver driver;
+    private ProductPage productPage;
+    private Context context;
+
+    public ProductPageSteps(Context context) {
+        this.driver = WebDriverManager.getDriver();
+        this.productPage = new ProductPage(driver);
+        this.context = context;
+    }
 
     @When("I click on the Add to cart button")
     public void iClickOnTheAddToCartButton() {
@@ -17,7 +24,7 @@ public class ProductPageSteps {
     }
 
     @When("I note the start price value")
-    public void iNoteTheStartPriceValue() throws InterruptedException {
+    public void iNoteTheStartPriceValue() {
         context.setContext("upfrontPriceProductPage", productPage.getTotalUpfrontPrice());
     }
 
