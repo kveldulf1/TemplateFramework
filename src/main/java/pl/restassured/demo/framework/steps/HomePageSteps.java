@@ -9,14 +9,7 @@ import pl.restassured.demo.framework.pageObjects.HomePage;
 import static org.junit.Assert.*;
 
 public class HomePageSteps  {
-//    private HomePage homePage;
-
     HomePage homePage = new HomePage(WebDriverManager.getDriver());
-
-    public HomePageSteps() {
-//        super(WebDriverManager.getDriver());
-//        this.homePage = new HomePage(driver);
-    }
 
     @Given("I am on the home page")
     public void iOpenTheHomePage() {
@@ -31,6 +24,6 @@ public class HomePageSteps  {
     @Then("I verify if browser is opened")
     public void iVerifyIfBrowserIsOpened() {
         assertNotNull("WebDriver instance is null", WebDriverManager.getDriver());
-        assertTrue("Browser did not navigate to any page", WebDriverManager.getDriver().getCurrentUrl().isEmpty());
+        assertFalse("Browser did not navigate to any page", WebDriverManager.getDriver().getCurrentUrl().isEmpty());
     }
 }

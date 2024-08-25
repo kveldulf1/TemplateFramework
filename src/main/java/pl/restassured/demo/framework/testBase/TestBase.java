@@ -16,9 +16,10 @@ public class TestBase {
 
     public TestBase(WebDriver driver) {
         this.driver = driver;
-        log.info("Initializing WebDriver");
+        log.debug("Initializing WebDriver");
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        log.info("Initializing WebDriverWait");
+        log.debug("Initializing WebDriverWait");
         PageFactory.initElements(driver, this);
+        log.debug("Initializing PageFactory");
     }
 }

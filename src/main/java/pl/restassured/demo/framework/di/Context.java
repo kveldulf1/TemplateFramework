@@ -9,7 +9,6 @@ import java.util.Map;
 
 // This class is used to store data between steps
 public class Context {
-
     private Logger log = LogManager.getLogger(CartPage.class);
 
     Map<String, String> stepData;
@@ -20,11 +19,11 @@ public class Context {
 
     public void setContext(String key, String value) {
         stepData.put(key, value);
-        log.info("Context value set: " + key + " = " + value);
+        log.info("Set context value: " + key + " = " + value);
     }
 
     public String getContext(String key) {
-        log.info("Context value fetched: " + key + " = " + stepData.get(key));
+        log.info("Get context value: " + key + " = " + stepData.get(key));
         return stepData.get(key);
     }
 }

@@ -2,19 +2,11 @@ package pl.restassured.demo.framework.steps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.drivers.WebDriverManager;
 import pl.restassured.demo.framework.pageObjects.HomePageMenuBar;
-import pl.restassured.demo.framework.testBase.TestBase;
 
-public class HomePageMenuBarSteps extends TestBase {
-//    private WebDriver driver;
-    private HomePageMenuBar homePageMenuBar;
-
-    public HomePageMenuBarSteps() {
-        super(WebDriverManager.getDriver());
-        this.homePageMenuBar = new HomePageMenuBar(driver);
-    }
+public class HomePageMenuBarSteps {
+    HomePageMenuBar homePageMenuBar = new HomePageMenuBar(WebDriverManager.getDriver());
 
     @When("I click on the Devices button from the home page menu bar")
     public void iClickOnTheDevicesButtonFromTheHomePageMenuBar() {

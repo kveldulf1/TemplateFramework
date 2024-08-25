@@ -10,13 +10,12 @@ public class WebDriverManager {
     private static WebDriver driver;
     private static final Logger log = LogManager.getLogger(WebDriverManager.class);
 
-
     public WebDriverManager() {
         // private constructor to prevent instantiation (this is a singleton class)
     }
 
     public static synchronized WebDriver getDriver() {
-        log.info("getDriver() called");
+        log.debug("getDriver() called");
         if (driver == null) {
             log.info("Creating new WebDriver instance");
 

@@ -8,13 +8,7 @@ import pl.restassured.demo.framework.pageObjects.DevicesSubMenu;
 import static org.junit.Assert.assertTrue;
 
 public class DevicesSubMenuSteps {
-    private WebDriver driver;
-    private DevicesSubMenu devicesSubMenu;
-
-    public DevicesSubMenuSteps() {
-        this.driver = WebDriverManager.getDriver();
-        this.devicesSubMenu = new DevicesSubMenu(driver);
-    }
+    DevicesSubMenu devicesSubMenu = new DevicesSubMenu(WebDriverManager.getDriver());
 
     @Then("I verify if Submenu is displayed")
     public void iVerifyIfSubmenuIsDisplayed() {
@@ -23,6 +17,6 @@ public class DevicesSubMenuSteps {
 
     @Then("I verify if url contains {string} text")
     public void iVerifyIfUrlContainsText(String arg0) {
-        assertTrue("Url does not contain " + arg0 + " text", driver.getCurrentUrl().contains(arg0));
+        assertTrue("Url does not contain " + arg0 + " text", WebDriverManager.getDriver().getCurrentUrl().contains(arg0));
     }
 }

@@ -4,9 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pl.restassured.demo.framework.di.Context;
 import pl.restassured.demo.framework.testBase.TestBase;
 
+import java.time.Duration;
 import java.util.List;
 
 public class ProductPage extends TestBase {
@@ -43,7 +45,7 @@ public class ProductPage extends TestBase {
         }
     }
 
-    public String getTotalUpfrontPrice() {
+    public String getTotalUpfrontPrice() throws InterruptedException {
         boolean isSuccessful = false;
         try {
             wait.until(driver -> upfrontPriceList.size() == 2);

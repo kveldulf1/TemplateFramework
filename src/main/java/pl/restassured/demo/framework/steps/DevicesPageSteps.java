@@ -6,13 +6,8 @@ import pl.restassured.demo.framework.drivers.WebDriverManager;
 import pl.restassured.demo.framework.pageObjects.DevicesPage;
 
 public class DevicesPageSteps {
-    private WebDriver driver;
-    private DevicesPage devicesPage;
 
-    public DevicesPageSteps() {
-        this.driver = WebDriverManager.getDriver();
-        this.devicesPage = new DevicesPage(driver);
-    }
+    DevicesPage devicesPage = new DevicesPage(WebDriverManager.getDriver());
 
     @When("I select the first product from the list")
     public void iSelectTheFirstProductFromTheList() {

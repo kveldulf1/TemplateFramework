@@ -36,17 +36,17 @@ public class CartPage extends TestBase {
     }
 
     public String getUpfrontPrice() {
-    boolean isSuccessful = false;
-    try {
-        wait.until(ExpectedConditions.visibilityOf(upfrontPrice));
-        isSuccessful = true;
-    } catch (Exception e) {
-        log.error("Upfront price value not fetched.");
-    }
-    if (isSuccessful) {
-        log.info("Upfront price fetched: " + upfrontPrice.getText());
-    }
-    return upfrontPrice.getText().concat(" zł");
+        boolean isSuccessful = false;
+        try {
+            wait.until(ExpectedConditions.visibilityOf(upfrontPrice));
+            isSuccessful = true;
+        } catch (Exception e) {
+            log.error("Upfront price value not fetched.");
+        }
+        if (isSuccessful) {
+            log.info("Upfront price fetched: " + upfrontPrice.getText());
+        }
+        return upfrontPrice.getText().concat(" zł");
     }
 
 
@@ -61,6 +61,6 @@ public class CartPage extends TestBase {
         if (isSuccessful) {
             log.info("Monthly price fetched.");
         }
-    return monthlyPrice.getText().concat(" zł");
+        return monthlyPrice.getText().concat(" zł");
     }
 }

@@ -2,25 +2,15 @@ package pl.restassured.demo.framework.steps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.drivers.WebDriverManager;
 import pl.restassured.demo.framework.pageObjects.CartPage;
 import pl.restassured.demo.framework.di.Context;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class CartPageSteps {
-
-    private WebDriver driver;
-    private CartPage cartPage;
-    private Context context;
-
-    public CartPageSteps(Context context) {
-        this.driver = WebDriverManager.getDriver();
-        this.cartPage = new CartPage(driver);
-        this.context = context;
-    }
+    CartPage cartPage = new CartPage(WebDriverManager.getDriver());
+    Context context = new Context();
 
     @Then("I verify if I am redirected to the basket page")
     public void iVerifyIfIAmRedirectedToTheBasketPage() {
