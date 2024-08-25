@@ -7,17 +7,18 @@ import pl.restassured.demo.framework.drivers.WebDriverManager;
 import pl.restassured.demo.framework.pageObjects.CartPage;
 import pl.restassured.demo.framework.di.Context;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class CartPageSteps {
 
-    private WebDriver driver;
+    // WebDriver initalization is needed for Context to work,
+    // Context works only between test steps in the same scenario, logic needs to be implemented here, not in the page object
+
+    private WebDriver driver = WebDriverManager.getDriver(); // initalization is needed for Context to work;
     private CartPage cartPage;
     private Context context;
 
     public CartPageSteps(Context context) {
-        this.driver = WebDriverManager.getDriver();
         this.cartPage = new CartPage(driver);
         this.context = context;
     }

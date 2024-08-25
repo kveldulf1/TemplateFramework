@@ -8,12 +8,15 @@ import pl.restassured.demo.framework.pageObjects.ProductPage;
 import pl.restassured.demo.framework.di.Context;
 
 public class ProductPageSteps {
-    private WebDriver driver;
+
+    // WebDriver initalization is needed for Context to work,
+    // Context works only between test steps in the same scenario, logic needs to be implemented here, not in the page object
+
+    private WebDriver driver = WebDriverManager.getDriver();
     private ProductPage productPage;
     private Context context;
 
     public ProductPageSteps(Context context) {
-        this.driver = WebDriverManager.getDriver();
         this.productPage = new ProductPage(driver);
         this.context = context;
     }
@@ -31,6 +34,5 @@ public class ProductPageSteps {
     @And("I note the monthly price value")
     public void iNoteTheMonthlyPriceValue() {
         context.setContext("monthlyPriceProductPage", productPage.getMonthlyPrice());
-        productPage.getMonthlyPrice();
     }
 }
