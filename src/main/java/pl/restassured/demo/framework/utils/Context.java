@@ -1,4 +1,4 @@
-package pl.restassured.demo.framework.di;
+package pl.restassured.demo.framework.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,7 +7,7 @@ import pl.restassured.demo.framework.pageObjects.CartPage;
 import java.util.HashMap;
 import java.util.Map;
 
-// This class is used to store data between steps
+// This class is used to store data between steps and uses PicoContainer and @Dependencyinjection to share data between steps.
 public class Context {
     private Logger log = LogManager.getLogger(CartPage.class);
 

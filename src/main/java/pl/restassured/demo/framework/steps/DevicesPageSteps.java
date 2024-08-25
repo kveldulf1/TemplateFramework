@@ -1,7 +1,6 @@
 package pl.restassured.demo.framework.steps;
 
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.drivers.WebDriverManager;
 import pl.restassured.demo.framework.pageObjects.DevicesPage;
 

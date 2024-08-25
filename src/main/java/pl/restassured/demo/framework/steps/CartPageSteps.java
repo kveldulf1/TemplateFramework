@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import pl.restassured.demo.framework.drivers.WebDriverManager;
 import pl.restassured.demo.framework.pageObjects.CartPage;
-import pl.restassured.demo.framework.di.Context;
+import pl.restassured.demo.framework.utils.Context;
 
 import static org.junit.Assert.assertTrue;
 

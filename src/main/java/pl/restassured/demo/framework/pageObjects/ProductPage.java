@@ -4,11 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pl.restassured.demo.framework.di.Context;
+import pl.restassured.demo.framework.utils.Context;
 import pl.restassured.demo.framework.testBase.TestBase;
 
-import java.time.Duration;
 import java.util.List;
 
 public class ProductPage extends TestBase {
