@@ -9,16 +9,11 @@ import pl.restassured.demo.framework.pageObjects.HomePage;
 import static org.junit.Assert.*;
 
 public class HomePageSteps  {
-    HomePage homePage = new HomePage(WebDriverManager.getDriver());
+    private final HomePage homePage = new HomePage(WebDriverManager.getDriver());
 
     @Given("I am on the home page")
     public void iOpenTheHomePage() {
         homePage.navigateToHomePage();
-    }
-
-    @And("I accept the cookies")
-    public void iAcceptTheCookies() {
-        homePage.acceptCookies();
     }
 
     @Then("I verify if browser is opened")

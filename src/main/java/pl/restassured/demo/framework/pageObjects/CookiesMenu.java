@@ -7,23 +7,26 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pl.restassured.demo.framework.testBase.TestBase;
 
-public class HomePage extends TestBase {
+public class CookiesMenu extends TestBase {
+    @FindBy(id = "didomi-notice-agree-button")
+    private WebElement acceptCookiesButton;
 
-    public HomePage(WebDriver driver) {
+    public CookiesMenu(WebDriver driver) {
         super(driver);
     }
 
-    public HomePage navigateToHomePage() {
+    public HomePageMenuBar acceptCookies() {
         boolean isSuccessful = false;
         try {
-            driver.get("http://t-mobile.pl");
+            wait.until(ExpectedConditions.visibilityOf(acceptCookiesButton));
+            acceptCookiesButton.click();
             isSuccessful = true;
         } catch (WebDriverException e) {
-            log.error("Navigation to home page failed.");
+            log.error("Accepting cookies failed.");
         }
         if (isSuccessful) {
-            log.info("Opened the home page.");
+            log.info("Accepted cookies.");
         }
-        return this;
+        return new HomePageMenuBar(driver);
     }
 }
